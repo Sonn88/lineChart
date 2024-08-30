@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myChart" style="width: 300px">
+</canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart=new Chart(ctx,{
+        type:'line',
+        data:{
+            width:200,
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+                data: [86, 71, 13, 45,67,32,55,37,85,32,44,76],
+                label: 'Candy',
+                borderColor: 'rgb(92,92,153)',
+            },
+                {
+                    data: [100, 21, 113, 0,44,66,23,46,57,98,23,15],
+                    label: 'Clothes',
+                    borderColor: 'rgb(58,211,93)'
+                },
+                {
+                    data: [0, 21, 35, 12, 36, 44, 97, 65, 0, 54, 23, 33,],
+                    label: 'Amazon',
+                    borderColor: 'rgb(211,58,122)'
+                },{
+                    data:[95,33,67,87,34,78,96,45,68,98,76,95],
+                    label: 'Movies',
+                    borderColor: 'rgb(161,125,80)'
+                }]
+
+        },
+        options:{
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Monthly Spending '
+                },
+                legend:{
+                    position:'left'}
+            }
+        }
+
+    });
+</script>
+</body>
+</html>
